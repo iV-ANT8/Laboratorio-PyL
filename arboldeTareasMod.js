@@ -65,7 +65,7 @@ class Tarea {
 class TareaCompuesta {
     constructor(codigo, duracion, tareas=[], complejidad){
         this.codigo = codigo;
-        this.duracion = duracion
+        this.duracion = duracion;
         this.tareas = tareas;
         this.complejidad = complejidad;
     }
@@ -120,7 +120,7 @@ const t11 = new Tarea("1.1", 6, new Maxima());
 const t1 = new TareaCompuesta("1", 2, [t11,t12,t13], new Maxima());
 t1.changeComplejidad(); // cambia la complejidad de todo el proyecto a Minimo, resultado original esperado: $2382 (sin extras)
 t1.changeComplejidad(); // cambia la complejidad de todo el proyecto a Media, resultado original esperado: $2397 (el extra es un $15,5 redondeado de la duracion de todo el árbol)
-t1.changeComplejidad(); // volvemos a la complejidad máxima, resultado original esperado: $23403 (el extra es un $21,7 redondeado para abajo, al que se le suman los 21 días. $2382 + $21 + $21000 = $23403)
+t1.changeComplejidad(); // volvemos a la complejidad Maxima, resultado original esperado: $23403 (el extra es un $21,7 redondeado para abajo, al que se le suman los 21 días. $2382 + $21 + $21000 = $23403)
 const proyecto = new Proyecto([t1]);
 console.log("Duración total del proyecto (T1): "+ proyecto.getDuracion());
 console.log("Costo total del proyecto (T1): $" + proyecto.getCostoTotal());
